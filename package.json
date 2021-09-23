@@ -1,0 +1,41 @@
+{
+  "name": "vite-electron-react-starter",
+  "description": "fork of soulsam480/vite-electron-react-starter for react.",
+  "private": true,
+  "main": "main/index.cjs.js",
+  "scripts": {
+    "buildEnvTypes": "node ./bin/buildEnvTypes.js",
+    "prebuild": "npm run buildEnvTypes",
+    "build": "node ./bin/build.js",
+    "precompile": "cross-env MODE=production npm run build",
+    "compile": "electron-builder build --config ./config/electron-builder.js",
+    "pretest": "cross-env MODE=test npm run build",
+    "test": "node ./tests/app.spec.js",
+    "prewatch": "npm run buildEnvTypes",
+    "watch": "node ./bin/watch.js"
+  },
+  "devDependencies": {
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "cross-env": "^7.0.3",
+    "electron": "^15.0.0",
+    "electron-builder": "^22.11.7",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-releases": "^3.805.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.18.0",
+    "slash": "^3.0.0",
+    "spectron": "^13.0.0",
+    "typescript": "^4.4.3",
+    "vite": "^2.5.10"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
