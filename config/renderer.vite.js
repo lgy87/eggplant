@@ -2,7 +2,7 @@ const { join } = require("path")
 import reactRefresh from "@vitejs/plugin-react-refresh"
 const { chrome } = require("./electron-dep-versions")
 /**
- * @type {import('vite').UserConfig}
+ * @type {import("vite").UserConfig}
  * @see https://vitejs.dev/config/
  */
 module.exports = {
