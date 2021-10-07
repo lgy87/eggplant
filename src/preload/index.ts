@@ -1,4 +1,8 @@
-import { ContextBridge, contextBridge } from "electron"
+import { contextBridge } from "electron"
+import * as fse from "fs-extra"
+import db from "./features/db"
+import * as dialogs from "./features/dialogs"
+import * as file from "./features/file"
 
 const apiKey = "electron"
 
@@ -7,6 +11,10 @@ const apiKey = "electron"
  */
 const api = {
   versions: process.versions,
+  fse,
+  file,
+  dialogs,
+  db,
 } as const
 
 export type ExposedInMainWorld = Readonly<typeof api>
@@ -20,35 +28,8 @@ if (import.meta.env.MODE !== "test") {
    */
   contextBridge.exposeInMainWorld(apiKey, api)
 } else {
-  type API = Parameters<ContextBridge["exposeInMainWorld"]>[1]
-
-  /**
-   * Recursively Object.freeze() on objects and functions
-   * @see https://github.com/substack/deep-freeze
-   * @param obj Object on which to lock the attributes
-   */
-  function deepFreeze<T extends API>(obj: T): Readonly<T> {
-    Object.freeze(obj)
-
-    Object.getOwnPropertyNames(obj).forEach(prop => {
-      if (
-        obj.hasOwnProperty(prop) &&
-        obj[prop] !== null &&
-        (typeof obj[prop] === "object" || typeof obj[prop] === "function") &&
-        !Object.isFrozen(obj[prop])
-      ) {
-        deepFreeze(obj[prop])
-      }
-    })
-
-    return obj
-  }
-
-  deepFreeze(api)
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-var-requires
   ;(window as any).electronRequire = require
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ;(window as any)[apiKey] = api
 }

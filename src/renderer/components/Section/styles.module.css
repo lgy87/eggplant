@@ -1,0 +1,8 @@
+.section {
+  margin: 1px;
+  margin-bottom: 8px;
+}
+
+.section :last-child {
+  margin-bottom: 0;
+}

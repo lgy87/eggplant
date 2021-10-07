@@ -1,91 +1,83 @@
-import { app, BrowserWindow } from "electron"
+import * as remoteMain from "@electron/remote/main"
+import { app, BrowserWindow, Menu } from "electron"
 import { join } from "path"
+import * as ra from "ramda-adjunct"
 import { format } from "url"
+import applicationMenu from "./menu"
+import { platform } from "./utils"
+
+remoteMain.initialize()
 
 const gotTheLock = app.requestSingleInstanceLock()
+gotTheLock || app.quit()
 
-if (!gotTheLock) {
-  app.quit()
-} else {
-  /**
-   * Workaround for TypeScript bug
-   * @see https://github.com/microsoft/TypeScript/issues/41468#issuecomment-727543400
-   */
-  const env = import.meta.env
+const env = import.meta.env
 
-  // Install "Vue.js devtools BETA"
-  if (env.MODE === "development") {
-    app
-      .whenReady()
-      .then(() => import("electron-devtools-installer"))
-      .then(({ default: installExtension }) => {
-        const REACT_DEVELOPER_TOOLS = "fmkadmapgofadopljbjfkapdkoienihi"
-        /** @see https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg */
-        return installExtension(REACT_DEVELOPER_TOOLS)
-      })
-      .catch(e => console.error("Failed install extension:", e))
-  }
-
-  let mainWindow: BrowserWindow | null = null
-
-  async function createWindow() {
-    mainWindow = new BrowserWindow({
-      show: false,
-      webPreferences: {
-        preload: join(__dirname, "../preload/index.cjs.js"),
-        contextIsolation: env.MODE !== "test", // Spectron tests can't work with contextIsolation: true
-        // sandbox: true, // Spectron tests can't work with enableRemoteModule: false
-      },
-    })
-
-    /**
-     * URL for main window.
-     * Vite dev server for development.
-     * `file://../renderer/index.html` for production and test
-     */
-    const URL =
-      env.MODE === "development"
-        ? env.VITE_DEV_SERVER_URL
-        : format({
-            protocol: "file",
-            pathname: join(__dirname, "../renderer/index.html"),
-            slashes: true,
-          })
-
-    await mainWindow.loadURL(URL)
-    mainWindow.maximize()
-    mainWindow.show()
-
-    if (env.MODE === "development") {
-      mainWindow.webContents.openDevTools()
-    }
-  }
-
-  app.on("second-instance", () => {
-    // Someone tried to run a second instance, we should focus our window.
-    if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore()
-      mainWindow.focus()
-    }
-  })
-
-  app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") {
-      app.quit()
-    }
-  })
-
+if (env.MODE === "development") {
   app
     .whenReady()
-    .then(createWindow)
-    .catch(e => console.error("Failed create window:", e))
+    .then(() => import("electron-devtools-installer"))
+    .then(({ default: installExtension }) => {
+      const REACT_DEVELOPER_TOOLS = "fmkadmapgofadopljbjfkapdkoienihi"
+      return installExtension(REACT_DEVELOPER_TOOLS)
+    })
+    .catch(e => console.error("Failed install extension:", e))
+}
 
-  // Auto-updates
-  if (env.PROD) {
-    app
-      .whenReady()
-      .then(() => import("electron-updater"))
-      .then(({ autoUpdater }) => autoUpdater.checkForUpdatesAndNotify())
-      .catch(e => console.error("Failed check updates:", e))
+let mainWindow: BrowserWindow | null = null
+
+async function createWindow() {
+  mainWindow = new BrowserWindow({
+    show: false,
+    webPreferences: {
+      preload: join(__dirname, "../preload/index.cjs.js"),
+      contextIsolation: env.MODE !== "test",
+    },
+  })
+
+  const indexHTML = join(__dirname, "../renderer/index.html")
+  const url =
+    env.MODE === "development"
+      ? env.VITE_DEV_SERVER_URL
+      : format(new URL(`file:///${indexHTML}`))
+
+  await mainWindow.loadURL(url)
+  mainWindow.maximize()
+  mainWindow.show()
+  remoteMain.enable(mainWindow.webContents)
+
+  if (env.DEV) mainWindow.webContents.openDevTools()
+}
+
+app.on("second-instance", () => {
+  if (mainWindow) {
+    if (mainWindow.isMinimized()) mainWindow.restore()
+    mainWindow.focus()
   }
+})
+
+app.on("window-all-closed", () => platform.mac || app.quit())
+
+app
+  .whenReady()
+  .then(setApplicationMenu)
+  .then(createWindow)
+  .then(() => {
+    app.on("activate", function () {
+      if (ra.lengthEq(0, BrowserWindow.getAllWindows())) createWindow()
+    })
+  })
+  .catch(e => console.error("Failed create window:", e))
+
+// Auto-updates
+if (env.PROD) {
+  app
+    .whenReady()
+    .then(() => import("electron-updater"))
+    .then(({ autoUpdater }) => autoUpdater.checkForUpdatesAndNotify())
+    .catch(e => console.error("Failed check updates:", e))
+}
+
+function setApplicationMenu() {
+  Menu.setApplicationMenu(applicationMenu)
 }

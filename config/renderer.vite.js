@@ -10,6 +10,7 @@ module.exports = {
   resolve: {
     alias: {
       "/@/": join(process.cwd(), "./src/renderer") + "/",
+      "~/": join(process.cwd(), "./src/renderer") + "/",
     },
   },
   plugins: [reactRefresh()],

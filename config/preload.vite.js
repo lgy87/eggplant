@@ -6,8 +6,11 @@ const { chrome } = require("./electron-dep-versions")
  * @see https://vitejs.dev/config/
  */
 module.exports = {
-  alias: {
-    "/@/": join(process.cwd(), "./src/preload") + "/",
+  resolve: {
+    alias: {
+      "/@/": join(process.cwd(), "./src/preload") + "/",
+      "~/": join(process.cwd(), "./src/preload") + "/",
+    },
   },
   build: {
     target: `chrome${chrome}`,

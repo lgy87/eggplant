@@ -21,6 +21,7 @@ export type Fn<
 
 export type Obj<T> = Record<string, T>
 export type VoidFn = Fn<void>
-export type AnyFn = Fn<Array<unknown>, unknown>
+export type AnyFn = Fn<unknown, unknown>
 export type AnyObject = Obj<unknown>
 export type EmptyObject = Obj<never>
+export type Timestamp = number

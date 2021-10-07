@@ -7,11 +7,10 @@
     "skipLibCheck": true,
     "strict": true,
     "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ]
+      "~/*": ["./*"]
     },
     "types": ["../../types/importMeta"]
   },

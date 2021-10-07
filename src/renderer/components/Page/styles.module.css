@@ -1,0 +1,22 @@
+.page {
+  color: inherit;
+}
+
+.page::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+  opacity: 0.04;
+  background: transparent url("~/assets/images/logo.png") center center
+    no-repeat;
+  background-size: 40%;
+  z-index: -1;
+}
+
+.goBack {
+  top: var(--gap);
+  left: var(--gap);
+}

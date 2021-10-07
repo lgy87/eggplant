@@ -1,0 +1,17 @@
+:root {
+  --command-bar-height: 44px;
+  --go-back-width: 70px;
+}
+
+.editor {
+  height: calc(100vh - var(--command-bar-height));
+}
+
+.commandBar {
+  padding: calc(var(--gap) / 2);
+  padding-left: var(--go-back-width);
+}
+
+.group {
+  margin-right: var(--gap);
+}

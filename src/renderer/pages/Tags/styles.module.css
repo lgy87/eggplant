@@ -1,0 +1,23 @@
+.page {
+  padding-top: 10%;
+}
+
+.tagsCreate {
+  width: 60%;
+  max-width: 500px;
+  min-width: 200px;
+}
+
+.submit {
+  width: 100px;
+}
+
+.divider {
+  margin-top: calc(var(--gap) * 2) !important;
+  margin-bottom: var(--gap) !important;
+}
+
+.tag {
+  margin-right: var(--gap);
+  margin-bottom: var(--gap);
+}

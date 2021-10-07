@@ -1,5 +1,7 @@
 #!/usr/bin/node
+
 console.time("Bundling time")
+
 const { build } = require("vite")
 const { join } = require("path")
 
