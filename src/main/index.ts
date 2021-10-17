@@ -6,8 +6,6 @@ import { format } from "url"
 import applicationMenu from "./menu"
 import { platform } from "./utils"
 
-remoteMain.initialize()
-
 const gotTheLock = app.requestSingleInstanceLock()
 gotTheLock || app.quit()
 
@@ -60,6 +58,7 @@ app.on("window-all-closed", () => platform.mac || app.quit())
 
 app
   .whenReady()
+  .then(remoteMain.initialize)
   .then(setApplicationMenu)
   .then(createWindow)
   .then(() => {
