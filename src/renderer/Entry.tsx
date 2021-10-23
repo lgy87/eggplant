@@ -1,11 +1,29 @@
-import { FocusStyleManager } from "@blueprintjs/core"
-import { initializeIcons } from "@fluentui/react"
-import React from "react"
+import { FocusStyleManager, useHotkeys } from "@blueprintjs/core"
+import React, { useMemo } from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 
 FocusStyleManager.onlyShowFocusOnTabs()
 
-initializeIcons(undefined, { disableWarnings: true })
+ReactDOM.render(<Entry />, document.getElementById("root"))
 
-ReactDOM.render(<App />, document.getElementById("root"))
+function Entry() {
+  const hotkeys = useMemo(
+    () => [
+      {
+        combo: "cmd+r",
+        global: true,
+        label: "Reload",
+        onKeyDown: () => location.reload(),
+      },
+    ],
+    [],
+  )
+  const { handleKeyUp } = useHotkeys(hotkeys)
+
+  return (
+    <div onKeyUp={handleKeyUp}>
+      <App />
+    </div>
+  )
+}

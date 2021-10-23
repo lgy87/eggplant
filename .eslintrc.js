@@ -6,10 +6,7 @@ module.exports = {
     node: true,
     browser: false,
   },
-  extends: [
-    /** @see https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#recommended-configs */
-    "plugin:@typescript-eslint/recommended",
-  ],
+  extends: ["plugin:@typescript-eslint/recommended"],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
@@ -31,9 +28,12 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "@typescript-eslint/no-extra-semi": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "react-hooks/exhaustive-deps": [
       "error",
-      { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
+      {
+        enableDangerousAutofixThisMayCauseInfiniteLoops: true,
+      },
     ],
   },
 }

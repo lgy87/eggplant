@@ -1,71 +1,68 @@
 import { Button, ButtonGroup } from "@blueprintjs/core"
-import { ICommandBarItemProps } from "@fluentui/react"
-import cx from "classnames"
 import React, { FC, memo } from "react"
+import { useNavigate } from "react-router-dom"
 import { VoidFn } from "~/global"
+import { views } from "./configs"
 import styles from "./styles.module.css"
-
-const classes = cx(styles.commandBar, "bg-white")
 
 type Props = {
   open: VoidFn
   save: VoidFn
   saveAs: VoidFn
+  showCodeOnly: VoidFn
+  showPreviewOnly: VoidFn
+  showBoth: VoidFn
+  view: views
 }
 
-const CommandBar: FC<Props> = ({ open, save, saveAs }) => {
-  items[1].onClick = open
-  items[3].onClick = save
+const CommandBar: FC<Props> = ({
+  open,
+  save,
+  saveAs,
+  showBoth,
+  showCodeOnly,
+  showPreviewOnly,
+  view,
+}) => {
+  const navigate = useNavigate()
 
   return (
     <div className={styles.commandBar}>
       <ButtonGroup className={styles.group}>
         <Button icon="document" title="New File" />
-        <Button icon="folder-open" title="Open File" />
-        <Button icon="floppy-disk" title="Save" />
+        <Button icon="folder-open" title="Open File" onClick={open} />
+        <Button icon="floppy-disk" title="Save" onClick={save} />
+        <Button icon="inbox" title="Save" onClick={saveAs} />
       </ButtonGroup>
       <ButtonGroup className={styles.group}>
-        <Button icon="code" title="Code" />
-        <Button icon="split-columns" title="Split" />
-        <Button icon="eye-open" title="Preview" />
+        <Button
+          icon="code"
+          title="Code"
+          onClick={showCodeOnly}
+          disabled={view === views.codeOnly}
+        />
+        <Button
+          icon="split-columns"
+          title="Split"
+          onClick={showBoth}
+          disabled={view === views.both}
+        />
+        <Button
+          icon="eye-open"
+          title="Preview"
+          onClick={showPreviewOnly}
+          disabled={view === views.previewOnly}
+        />
+      </ButtonGroup>
+      <ButtonGroup className={styles.group}>
+        <Button
+          icon="cog"
+          title="Settings"
+          onClick={() => navigate("/settings")}
+        />
       </ButtonGroup>
     </div>
   )
 }
 
 export default memo(CommandBar)
-
-const items: Array<ICommandBarItemProps> = [
-  {
-    key: "newItem",
-    text: "New",
-    iconProps: { iconName: "PageAdd" },
-    subMenuProps: {
-      items: [
-        {
-          key: "emailMessage",
-          text: "Email message",
-          iconProps: { iconName: "Mail" },
-          ["data-automation-id"]: "newEmailButton", // optional
-        },
-      ],
-    },
-  },
-  {
-    key: "open",
-    text: "Open...",
-    iconProps: { iconName: "OpenFolderHorizontal" },
-  },
-  {
-    key: "language",
-    text: "Language",
-    iconProps: { iconName: "CollapseMenu" },
-  },
-
-  {
-    key: "download",
-    text: "Save",
-    iconProps: { iconName: "Save" },
-    onClick: () => console.log("Download"),
-  },
-]
