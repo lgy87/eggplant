@@ -1,5 +1,5 @@
 import { Checkbox as BPCheckbox } from "@blueprintjs/core"
-import { ComponentProps, FC, memo } from "react"
+import React, { ComponentProps, FC, memo } from "react"
 
 type BPCheckboxProps = ComponentProps<typeof BPCheckbox>
 

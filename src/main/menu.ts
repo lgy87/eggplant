@@ -7,12 +7,10 @@ const file = {
     {
       label: "New File",
       accelerator: "CmdOrCtrl + N",
-      click() {},
     },
     {
       label: "Open File",
       accelerator: "CmdOrCtrl + O",
-      click() {},
     },
     {
       label: "Save File",

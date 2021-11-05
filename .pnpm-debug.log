@@ -1,0 +1,3044 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "rime-settings",
+      "description": "rime-settings",
+      "private": true,
+      "main": "main/index.cjs.js",
+      "scripts": {
+        "buildEnvTypes": "node ./bin/buildEnvTypes.js",
+        "prebuild": "npm run buildEnvTypes",
+        "build": "node ./bin/build.js",
+        "precompile": "cross-env MODE=production npm run build",
+        "compile": "electron-builder build --config ./config/electron-builder.js",
+        "pretest": "cross-env MODE=test npm run build",
+        "test": "node ./tests/app.spec.js",
+        "prewatch": "npm run buildEnvTypes",
+        "watch": "node ./bin/watch.js"
+      },
+      "devDependencies": {
+        "@electron/remote": "^2.0.1",
+        "@types/electron-devtools-installer": "^2.2.0",
+        "@types/level": "^6.0.0",
+        "@types/ramda": "^0.27.45",
+        "@types/react": "^17.0.31",
+        "@types/react-dom": "^17.0.10",
+        "@types/react-router-dom": "^5.3.1",
+        "@types/rebass": "^4.0.10",
+        "@typescript-eslint/eslint-plugin": "^5.1.0",
+        "@typescript-eslint/parser": "^5.1.0",
+        "@vitejs/plugin-react-refresh": "^1.3.6",
+        "cross-env": "^7.0.3",
+        "electron": "^15.3.0",
+        "electron-builder": "^22.13.1",
+        "electron-devtools-installer": "^3.2.0",
+        "electron-releases": "^3.836.0",
+        "electron-updater": "^4.3.9",
+        "eslint": "^8.1.0",
+        "eslint-plugin-react-hooks": "^4.2.1-alpha-00ced1e2b-20211102",
+        "eslint-plugin-vue": "^7.20.0",
+        "slash": "^3.0.0",
+        "spectron": "^15.0.0",
+        "typescript": "^4.4.4",
+        "vite": "^2.6.10"
+      },
+      "dependencies": {
+        "@blueprintjs/core": "^4.0.0-beta.5",
+        "@blueprintjs/icons": "^4.0.0-beta.4",
+        "@blueprintjs/popover2": "^1.0.0-beta.4",
+        "@blueprintjs/select": "^4.0.0-beta.5",
+        "classnames": "^2.3.1",
+        "date-fns": "^2.25.0",
+        "fs-extra": "^10.0.0",
+        "history": "^5.0.1",
+        "level": "^7.0.1",
+        "localforage": "^1.10.0",
+        "ramda": "^0.27.1",
+        "ramda-adjunct": "^2.34.0",
+        "react": "^17.0.2",
+        "react-color": "^2.19.3",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^6.0.0-beta.8",
+        "react-use": "^17.3.1",
+        "rebass": "^4.0.7",
+        "yaml": "^1.10.2"
+      }
+    },
+    "prefix": "/Users/ss/projects/yunque/rime-settings"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/ss/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/ss/projects/yunque/rime-settings/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/ss/projects/yunque/rime-settings",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/rebass/4.0.10",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/rebass",
+      "rawSpec": "^4.0.10"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/rebass/4.0.10",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react-dom/17.0.11",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react-dom",
+      "rawSpec": "^17.0.10"
+    }
+  },
+  "7 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react-dom/17.0.11",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@electron/remote/2.0.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@electron/remote",
+      "rawSpec": "^2.0.1"
+    }
+  },
+  "9 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@electron/remote/2.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/electron-devtools-installer/2.2.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/electron-devtools-installer",
+      "rawSpec": "^2.2.0"
+    }
+  },
+  "11 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/electron-devtools-installer/2.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "12 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/rebass/4.0.10",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "13 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/cross-env/7.0.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "cross-env",
+      "rawSpec": "^7.0.3"
+    }
+  },
+  "14 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/cross-env/7.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "15 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@electron/remote/2.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "electron-devtools-installer",
+      "rawSpec": "^3.2.0"
+    }
+  },
+  "17 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/electron-devtools-installer/2.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@vitejs/plugin-react-refresh",
+      "rawSpec": "^1.3.6"
+    }
+  },
+  "20 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "21 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/level/6.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/level",
+      "rawSpec": "^6.0.0"
+    }
+  },
+  "22 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/level/6.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/cross-env/7.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "24 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react-router-dom",
+      "rawSpec": "^5.3.1"
+    }
+  },
+  "25 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "27 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/level/6.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "29 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/ramda/0.27.46",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/ramda",
+      "rawSpec": "^0.27.45"
+    }
+  },
+  "30 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/ramda/0.27.46",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "31 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/electron/15.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "electron",
+      "rawSpec": "^15.3.0"
+    }
+  },
+  "32 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron/15.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "33 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/slash/3.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "slash",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "34 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/slash/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "35 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron/15.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "36 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-vue",
+      "rawSpec": "^7.20.0"
+    }
+  },
+  "37 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "38 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/electron-updater/4.3.9",
+    "wanted": {
+      "dependentId": ".",
+      "name": "electron-updater",
+      "rawSpec": "^4.3.9"
+    }
+  },
+  "39 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-updater/4.3.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "40 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react/17.0.34",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react",
+      "rawSpec": "^17.0.31"
+    }
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react/17.0.34",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/slash/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-updater/4.3.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "45 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/eslint/8.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "^8.1.0"
+    }
+  },
+  "46 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/eslint/8.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "47 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/spectron/15.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "spectron",
+      "rawSpec": "^15.0.0"
+    }
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/spectron/15.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "49 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@blueprintjs/icons",
+      "rawSpec": "^4.0.0-beta.4"
+    }
+  },
+  "50 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "51 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/eslint-plugin-react-hooks/4.2.1-alpha-fd5e01c2e-20210913",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-react-hooks",
+      "rawSpec": "^4.2.1-alpha-00ced1e2b-20211102"
+    }
+  },
+  "52 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/eslint-plugin-react-hooks/4.2.1-alpha-fd5e01c2e-20210913",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "53 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@blueprintjs/popover2",
+      "rawSpec": "^1.0.0-beta.4"
+    }
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "55 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@types/react-dom/17.0.11",
+    "size": 7373,
+    "status": "started"
+  },
+  "56 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@typescript-eslint/parser/5.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@typescript-eslint/parser",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "57 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@typescript-eslint/parser/5.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "58 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@types/ramda/0.27.46",
+    "size": 42463,
+    "status": "started"
+  },
+  "59 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/fs-extra/10.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "fs-extra",
+      "rawSpec": "^10.0.0"
+    }
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/fs-extra/10.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "61 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/eslint/8.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "62 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@blueprintjs/select",
+      "rawSpec": "^4.0.0-beta.5"
+    }
+  },
+  "63 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "64 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/spectron/15.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "65 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@blueprintjs/core",
+      "rawSpec": "^4.0.0-beta.5"
+    }
+  },
+  "66 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "67 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+    "size": 2667,
+    "status": "started"
+  },
+  "68 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@types/react/17.0.34",
+    "size": 34319,
+    "status": "started"
+  },
+  "69 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@typescript-eslint/parser/5.3.0",
+    "size": 17123,
+    "status": "started"
+  },
+  "70 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react-dom/17.0.11",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "71 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@typescript-eslint/eslint-plugin",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "72 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "73 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/date-fns/2.25.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "date-fns",
+      "rawSpec": "^2.25.0"
+    }
+  },
+  "74 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/date-fns/2.25.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "75 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/eslint-plugin-react-hooks/4.2.1-alpha-fd5e01c2e-20210913",
+    "size": 31249,
+    "status": "started"
+  },
+  "76 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/level/7.0.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "level",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "77 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/level/7.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "78 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/history/5.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "history",
+      "rawSpec": "^5.0.1"
+    }
+  },
+  "79 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/history/5.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "80 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/classnames/2.3.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "classnames",
+      "rawSpec": "^2.3.1"
+    }
+  },
+  "81 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/classnames/2.3.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "82 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+    "size": 86210,
+    "status": "started"
+  },
+  "83 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "84 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/localforage/1.10.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "localforage",
+      "rawSpec": "^1.10.0"
+    }
+  },
+  "85 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/localforage/1.10.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "86 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/electron-releases/3.848.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "electron-releases",
+      "rawSpec": "^3.836.0"
+    }
+  },
+  "87 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-releases/3.848.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "88 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/ramda/0.27.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "ramda",
+      "rawSpec": "^0.27.1"
+    }
+  },
+  "89 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ramda/0.27.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "90 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/electron-builder/22.13.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "electron-builder",
+      "rawSpec": "^22.13.1"
+    }
+  },
+  "91 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-builder/22.13.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "92 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+    "size": 81017,
+    "status": "started"
+  },
+  "93 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+    "size": 437450,
+    "status": "started"
+  },
+  "94 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@typescript-eslint/parser/5.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "95 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/ramda-adjunct/2.35.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "ramda-adjunct",
+      "rawSpec": "^2.34.0"
+    }
+  },
+  "96 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ramda-adjunct/2.35.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "97 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-color/2.19.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-color",
+      "rawSpec": "^2.19.3"
+    }
+  },
+  "98 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-color/2.19.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "99 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/history/5.1.0",
+    "size": 14403,
+    "status": "started"
+  },
+  "100 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react/17.0.34",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "101 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/eslint-plugin-react-hooks/4.2.1-alpha-fd5e01c2e-20210913",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "102 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-router-dom/6.0.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-router-dom",
+      "rawSpec": "^6.0.0-beta.8"
+    }
+  },
+  "103 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-router-dom/6.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "104 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/yaml/1.10.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "yaml",
+      "rawSpec": "^1.10.2"
+    }
+  },
+  "105 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/yaml/1.10.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "106 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/ramda-adjunct/2.35.0",
+    "size": 439397,
+    "status": "started"
+  },
+  "107 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/rebass/4.0.7",
+    "wanted": {
+      "dependentId": ".",
+      "name": "rebass",
+      "rawSpec": "^4.0.7"
+    }
+  },
+  "108 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/rebass/4.0.7",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "109 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/history/5.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "110 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react/17.0.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react",
+      "rawSpec": "^17.0.2"
+    }
+  },
+  "111 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react/17.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "112 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/ramda/0.27.46",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "113 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-dom/17.0.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-dom",
+      "rawSpec": "^17.0.2"
+    }
+  },
+  "114 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-dom/17.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "115 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/electron-releases/3.848.0",
+    "size": 4510441,
+    "status": "started"
+  },
+  "116 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/react-router-dom/6.0.0",
+    "size": 21498,
+    "status": "started"
+  },
+  "117 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-use/17.3.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-use",
+      "rawSpec": "^17.3.1"
+    }
+  },
+  "118 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-use/17.3.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "119 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "120 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "121 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-router-dom/6.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "122 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/vite/2.6.13",
+    "wanted": {
+      "dependentId": ".",
+      "name": "vite",
+      "rawSpec": "^2.6.10"
+    }
+  },
+  "123 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/vite/2.6.13",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "124 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/typescript/4.4.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "typescript",
+      "rawSpec": "^4.4.4"
+    }
+  },
+  "125 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/typescript/4.4.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "126 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react/17.0.34",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/rebass/4.0.10",
+      "name": "@types/react",
+      "rawSpec": "*"
+    }
+  },
+  "127 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react/17.0.34",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react-dom/17.0.11",
+      "name": "@types/react",
+      "rawSpec": "*"
+    }
+  },
+  "128 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "129 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/vite/2.6.13",
+    "size": 2733448,
+    "status": "started"
+  },
+  "130 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ramda-adjunct/2.35.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "131 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/semver/7.3.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+      "name": "semver",
+      "rawSpec": "^7.2.1"
+    }
+  },
+  "132 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/semver/7.3.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "133 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/styled-components/5.1.15",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/rebass/4.0.10",
+      "name": "@types/styled-components",
+      "rawSpec": "*"
+    }
+  },
+  "134 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/styled-components/5.1.15",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "135 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/rimraf/3.0.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+      "name": "rimraf",
+      "rawSpec": "^3.0.2"
+    }
+  },
+  "136 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/rimraf/3.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "137 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/@rollup/pluginutils/4.1.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+      "name": "@rollup/pluginutils",
+      "rawSpec": "^4.1.1"
+    }
+  },
+  "138 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/@rollup/pluginutils/4.1.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "139 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react/17.0.34",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+      "name": "@types/react",
+      "rawSpec": "*"
+    }
+  },
+  "140 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@babel/plugin-transform-react-jsx-source/7.16.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+      "name": "@babel/plugin-transform-react-jsx-source",
+      "rawSpec": "^7.14.5"
+    }
+  },
+  "141 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@babel/plugin-transform-react-jsx-source/7.16.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "142 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/tslib/2.3.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+      "name": "tslib",
+      "rawSpec": "^2.1.0"
+    }
+  },
+  "143 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/tslib/2.3.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "144 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/cross-spawn/7.0.3",
+    "wanted": {
+      "dependentId": "registry.nlark.com/cross-env/7.0.3",
+      "name": "cross-spawn",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "145 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/cross-spawn/7.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "146 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/styled-system/5.1.13",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/rebass/4.0.10",
+      "name": "@types/styled-system",
+      "rawSpec": "*"
+    }
+  },
+  "147 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/styled-system/5.1.13",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "148 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/unzip-crx-3/0.2.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-devtools-installer/3.2.0",
+      "name": "unzip-crx-3",
+      "rawSpec": "^0.2.0"
+    }
+  },
+  "149 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/unzip-crx-3/0.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "150 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/styled-system__css/5.0.16",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/rebass/4.0.10",
+      "name": "@types/styled-system__css",
+      "rawSpec": "*"
+    }
+  },
+  "151 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/styled-system__css/5.0.16",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "152 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@babel/plugin-transform-react-jsx-self/7.16.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+      "name": "@babel/plugin-transform-react-jsx-self",
+      "rawSpec": "^7.14.5"
+    }
+  },
+  "153 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@babel/plugin-transform-react-jsx-self/7.16.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "154 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/abstract-leveldown/5.0.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/level/6.0.0",
+      "name": "@types/abstract-leveldown",
+      "rawSpec": "*"
+    }
+  },
+  "155 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/abstract-leveldown/5.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "156 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/semver/6.3.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+      "name": "semver",
+      "rawSpec": "^6.3.0"
+    }
+  },
+  "157 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/semver/6.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "158 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "159 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/fs-extra/10.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "160 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-refresh/0.10.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+      "name": "react-refresh",
+      "rawSpec": "^0.10.0"
+    }
+  },
+  "161 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-refresh/0.10.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "162 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "163 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/history/4.7.9",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+      "name": "@types/history",
+      "rawSpec": "*"
+    }
+  },
+  "164 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/history/4.7.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "165 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/encoding-down/5.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/level/6.0.0",
+      "name": "@types/encoding-down",
+      "rawSpec": "*"
+    }
+  },
+  "166 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/encoding-down/5.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "167 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/fs-extra/10.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "fs-extra",
+      "rawSpec": "^10.0.0"
+    }
+  },
+  "168 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/date-fns/2.25.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "169 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/levelup/4.3.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/level/6.0.0",
+      "name": "@types/levelup",
+      "rawSpec": "*"
+    }
+  },
+  "170 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/levelup/4.3.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "171 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/builder-util-runtime/8.7.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "builder-util-runtime",
+      "rawSpec": "8.7.5"
+    }
+  },
+  "172 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/builder-util-runtime/8.7.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "173 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/classnames/2.3.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "174 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/level/7.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "175 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react-router/5.1.17",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react-router-dom/5.3.2",
+      "name": "@types/react-router",
+      "rawSpec": "*"
+    }
+  },
+  "176 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react-router/5.1.17",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "177 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/localforage/1.10.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "178 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-builder/22.13.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "179 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/extract-zip/1.7.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron/15.3.0",
+      "name": "extract-zip",
+      "rawSpec": "^1.0.3"
+    }
+  },
+  "180 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/extract-zip/1.7.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "181 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/semver/7.3.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "semver",
+      "rawSpec": "^7.3.5"
+    }
+  },
+  "182 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/natural-compare/1.4.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+      "name": "natural-compare",
+      "rawSpec": "^1.4.0"
+    }
+  },
+  "183 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/natural-compare/1.4.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "184 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ramda/0.27.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "185 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-color/2.19.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "186 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/yaml/1.10.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "187 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/rebass/4.0.7",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "188 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react/17.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "189 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-dom/17.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "190 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-use/17.3.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "191 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/typescript/4.4.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "192 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/styled-components/5.1.15",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "193 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/semver/7.3.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "194 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/@rollup/pluginutils/4.1.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "195 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/rimraf/3.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "196 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/tslib/2.3.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "197 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/cross-spawn/7.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "198 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/unzip-crx-3/0.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "199 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/styled-system/5.1.13",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "200 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/styled-system__css/5.0.16",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "201 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/semver/6.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "202 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/abstract-leveldown/5.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "203 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-refresh/0.10.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "204 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/levelup/4.3.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "205 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/history/4.7.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "206 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/encoding-down/5.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "207 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/builder-util-runtime/8.7.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "208 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react-router/5.1.17",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "209 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/extract-zip/1.7.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "210 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/natural-compare/1.4.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "211 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/node/14.17.32",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron/15.3.0",
+      "name": "@types/node",
+      "rawSpec": "^14.6.2"
+    }
+  },
+  "212 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/node/14.17.32",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "213 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/eslint-utils/2.1.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+      "name": "eslint-utils",
+      "rawSpec": "^2.1.0"
+    }
+  },
+  "214 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-utils/2.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "215 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@electron/get/1.13.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron/15.3.0",
+      "name": "@electron/get",
+      "rawSpec": "^1.13.0"
+    }
+  },
+  "216 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@electron/get/1.13.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "217 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/vue-eslint-parser/7.11.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint-plugin-vue/7.20.0",
+      "name": "vue-eslint-parser",
+      "rawSpec": "^7.10.0"
+    }
+  },
+  "218 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/vue-eslint-parser/7.11.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "219 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-utils/2.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "220 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/vue-eslint-parser/7.11.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "221 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/ts-toolbelt/6.15.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/ramda/0.27.46",
+      "name": "ts-toolbelt",
+      "rawSpec": "^6.15.1"
+    }
+  },
+  "222 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ts-toolbelt/6.15.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "223 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ts-toolbelt/6.15.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "224 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@babel/plugin-transform-react-jsx-source/7.16.0",
+    "size": 2141,
+    "status": "started"
+  },
+  "225 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/semver/7.3.9",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "@types/semver",
+      "rawSpec": "^7.3.5"
+    }
+  },
+  "226 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/semver/7.3.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "227 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/lodash.escaperegexp/4.1.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "lodash.escaperegexp",
+      "rawSpec": "^4.1.2"
+    }
+  },
+  "228 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/lodash.escaperegexp/4.1.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "229 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/cross-spawn/7.0.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "cross-spawn",
+      "rawSpec": "^7.0.2"
+    }
+  },
+  "230 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/lazy-val/1.0.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "lazy-val",
+      "rawSpec": "^1.0.4"
+    }
+  },
+  "231 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/lazy-val/1.0.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "232 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/@types/prop-types/15.7.4",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react/17.0.34",
+      "name": "@types/prop-types",
+      "rawSpec": "*"
+    }
+  },
+  "233 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/@types/prop-types/15.7.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "234 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/lodash.isequal/4.5.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "lodash.isequal",
+      "rawSpec": "^4.5.0"
+    }
+  },
+  "235 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/lodash.isequal/4.5.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "236 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/@types/scheduler/0.16.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react/17.0.34",
+      "name": "@types/scheduler",
+      "rawSpec": "*"
+    }
+  },
+  "237 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/@types/scheduler/0.16.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "238 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/js-yaml/4.1.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/electron-updater/4.3.9",
+      "name": "js-yaml",
+      "rawSpec": "^4.1.0"
+    }
+  },
+  "239 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/js-yaml/4.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "240 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/eslint-utils/3.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "eslint-utils",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "241 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-utils/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "242 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@eslint/eslintrc/1.0.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "@eslint/eslintrc",
+      "rawSpec": "^1.0.3"
+    }
+  },
+  "243 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@eslint/eslintrc/1.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "244 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/semver/7.3.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "245 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/lazy-val/1.0.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "246 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/lodash.escaperegexp/4.1.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "247 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@babel/plugin-transform-react-jsx-source/7.16.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "248 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/csstype/3.0.9",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@types/react/17.0.34",
+      "name": "csstype",
+      "rawSpec": "^3.0.2"
+    }
+  },
+  "249 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/csstype/3.0.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "250 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/@types/prop-types/15.7.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "251 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/@types/scheduler/0.16.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "252 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/lodash.isequal/4.5.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "253 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@humanwhocodes/config-array/0.6.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "@humanwhocodes/config-array",
+      "rawSpec": "^0.6.0"
+    }
+  },
+  "254 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@humanwhocodes/config-array/0.6.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "255 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-utils/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "256 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/js-yaml/4.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "257 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@eslint/eslintrc/1.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "258 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/csstype/3.0.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "259 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@humanwhocodes/config-array/0.6.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "260 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@electron/get/1.13.1",
+    "size": 16840,
+    "status": "started"
+  },
+  "261 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@electron/get/1.13.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "262 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@babel/core/7.16.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@vitejs/plugin-react-refresh/1.3.6",
+      "name": "@babel/core",
+      "rawSpec": "^7.14.8"
+    }
+  },
+  "263 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@babel/core/7.16.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "264 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@types/node/14.17.32",
+    "size": 110804,
+    "status": "started"
+  },
+  "265 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/node/14.17.32",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "266 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/escape-string-regexp/4.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "escape-string-regexp",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "267 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/escape-string-regexp/4.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "268 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/eslint-visitor-keys/3.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "eslint-visitor-keys",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "269 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-visitor-keys/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "270 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/debug/4.3.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "debug",
+      "rawSpec": "^4.3.2"
+    }
+  },
+  "271 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/debug/4.3.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "272 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/eslint-scope/6.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "eslint-scope",
+      "rawSpec": "^6.0.0"
+    }
+  },
+  "273 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-scope/6.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "274 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/enquirer/2.3.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "enquirer",
+      "rawSpec": "^2.3.5"
+    }
+  },
+  "275 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/enquirer/2.3.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "276 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/doctrine/3.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "doctrine",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "277 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/doctrine/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "278 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/esquery/1.4.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "esquery",
+      "rawSpec": "^1.4.0"
+    }
+  },
+  "279 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/esquery/1.4.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "280 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/esutils/2.0.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "esutils",
+      "rawSpec": "^2.0.2"
+    }
+  },
+  "281 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/esutils/2.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "282 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/js-yaml/4.1.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "js-yaml",
+      "rawSpec": "^4.1.0"
+    }
+  },
+  "283 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/espree/9.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "espree",
+      "rawSpec": "^9.0.0"
+    }
+  },
+  "284 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/espree/9.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "285 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/chalk/4.1.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "chalk",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "286 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/chalk/4.1.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "287 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/escape-string-regexp/4.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "288 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-visitor-keys/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "289 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/debug/4.3.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "290 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/eslint-scope/6.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "291 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/doctrine/3.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "292 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/enquirer/2.3.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "293 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/esquery/1.4.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "294 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/espree/9.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "295 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/chalk/4.1.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "296 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/esutils/2.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "297 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/fast-deep-equal/3.1.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "fast-deep-equal",
+      "rawSpec": "^3.1.3"
+    }
+  },
+  "298 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/fast-deep-equal/3.1.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "299 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/file-entry-cache/6.0.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "file-entry-cache",
+      "rawSpec": "^6.0.1"
+    }
+  },
+  "300 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/file-entry-cache/6.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "301 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/natural-compare/1.4.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "natural-compare",
+      "rawSpec": "^1.4.0"
+    }
+  },
+  "302 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/fast-deep-equal/3.1.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "303 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/file-entry-cache/6.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "304 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/functional-red-black-tree/1.0.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "functional-red-black-tree",
+      "rawSpec": "^1.0.1"
+    }
+  },
+  "305 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/functional-red-black-tree/1.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "306 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/glob-parent/6.0.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "glob-parent",
+      "rawSpec": "^6.0.1"
+    }
+  },
+  "307 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/glob-parent/6.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "308 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/is-glob/4.0.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "is-glob",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "309 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/is-glob/4.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "310 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/semver/7.3.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "semver",
+      "rawSpec": "^7.2.1"
+    }
+  },
+  "311 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/json-stable-stringify-without-jsonify/1.0.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "json-stable-stringify-without-jsonify",
+      "rawSpec": "^1.0.1"
+    }
+  },
+  "312 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/json-stable-stringify-without-jsonify/1.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "313 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/levn/0.4.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "levn",
+      "rawSpec": "^0.4.1"
+    }
+  },
+  "314 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/levn/0.4.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "315 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/imurmurhash/0.1.4",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "imurmurhash",
+      "rawSpec": "^0.1.4"
+    }
+  },
+  "316 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/imurmurhash/0.1.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "317 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/import-fresh/3.3.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "import-fresh",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "318 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/import-fresh/3.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "319 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@electron/remote/1.2.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/spectron/15.0.0",
+      "name": "@electron/remote",
+      "rawSpec": "^1.1.0"
+    }
+  },
+  "320 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@electron/remote/1.2.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "321 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/optionator/0.9.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "optionator",
+      "rawSpec": "^0.9.1"
+    }
+  },
+  "322 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/optionator/0.9.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "323 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/lodash.merge/4.6.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "lodash.merge",
+      "rawSpec": "^4.6.2"
+    }
+  },
+  "324 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/lodash.merge/4.6.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "325 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/minimatch/3.0.4",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "minimatch",
+      "rawSpec": "^3.0.4"
+    }
+  },
+  "326 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/minimatch/3.0.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "327 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/@babel/core/7.16.0",
+    "size": 39731,
+    "status": "started"
+  },
+  "328 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/globals/13.12.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "globals",
+      "rawSpec": "^13.6.0"
+    }
+  },
+  "329 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/globals/13.12.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "330 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/ignore/4.0.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "ignore",
+      "rawSpec": "^4.0.6"
+    }
+  },
+  "331 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ignore/4.0.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "332 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/is-glob/4.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "333 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/functional-red-black-tree/1.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "334 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/glob-parent/6.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "335 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/import-fresh/3.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "336 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/progress/2.0.3",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "progress",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "337 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/progress/2.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "338 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/json-stable-stringify-without-jsonify/1.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "339 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/levn/0.4.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "340 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/imurmurhash/0.1.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "341 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@electron/remote/1.2.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "342 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/regexpp/3.2.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "regexpp",
+      "rawSpec": "^3.2.0"
+    }
+  },
+  "343 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/regexpp/3.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "344 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/classnames/2.3.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+      "name": "classnames",
+      "rawSpec": "^2.2"
+    }
+  },
+  "345 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/tslib/1.13.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+      "name": "tslib",
+      "rawSpec": "~1.13.0"
+    }
+  },
+  "346 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/tslib/1.13.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "347 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "@blueprintjs/core",
+      "rawSpec": "^4.0.0-beta.6"
+    }
+  },
+  "348 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/v8-compile-cache/2.3.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "v8-compile-cache",
+      "rawSpec": "^2.0.3"
+    }
+  },
+  "349 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/v8-compile-cache/2.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "350 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/classnames/2.3.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "classnames",
+      "rawSpec": "^2.2"
+    }
+  },
+  "351 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/optionator/0.9.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "352 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/lodash.merge/4.6.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "353 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ignore/4.0.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "354 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/minimatch/3.0.4",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "355 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/ajv/6.12.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "ajv",
+      "rawSpec": "^6.10.0"
+    }
+  },
+  "356 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/ajv/6.12.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "357 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/progress/2.0.3",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "358 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/strip-json-comments/3.1.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "strip-json-comments",
+      "rawSpec": "^3.1.0"
+    }
+  },
+  "359 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/strip-json-comments/3.1.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "360 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/dev-null/0.1.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/spectron/15.0.0",
+      "name": "dev-null",
+      "rawSpec": "^0.1.1"
+    }
+  },
+  "361 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/dev-null/0.1.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "362 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/tslib/1.13.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "tslib",
+      "rawSpec": "~1.13.0"
+    }
+  },
+  "363 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/text-table/0.2.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "text-table",
+      "rawSpec": "^0.2.0"
+    }
+  },
+  "364 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/text-table/0.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "365 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/regexpp/3.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "366 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/v8-compile-cache/2.3.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "367 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/electron-chromedriver/13.0.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/spectron/15.0.0",
+      "name": "electron-chromedriver",
+      "rawSpec": "^13.0.0"
+    }
+  },
+  "368 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-chromedriver/13.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "369 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/debug/4.3.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@typescript-eslint/parser/5.3.0",
+      "name": "debug",
+      "rawSpec": "^4.3.2"
+    }
+  },
+  "370 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/tslib/1.13.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "371 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/strip-ansi/6.0.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/eslint/8.1.0",
+      "name": "strip-ansi",
+      "rawSpec": "^6.0.0"
+    }
+  },
+  "372 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/strip-ansi/6.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "373 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/change-case/4.1.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+      "name": "change-case",
+      "rawSpec": "^4.1.2"
+    }
+  },
+  "374 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/change-case/4.1.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "375 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/strip-json-comments/3.1.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "376 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/split/1.0.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/spectron/15.0.0",
+      "name": "split",
+      "rawSpec": "^1.0.1"
+    }
+  },
+  "377 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/split/1.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "378 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+      "name": "@blueprintjs/core",
+      "rawSpec": "^4.0.0-beta.6"
+    }
+  },
+  "379 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/classnames/2.3.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+      "name": "classnames",
+      "rawSpec": "^2.2"
+    }
+  },
+  "380 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/tslib/1.13.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/select/4.0.0-beta.6",
+      "name": "tslib",
+      "rawSpec": "~1.13.0"
+    }
+  },
+  "381 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmmirror.com/globals/13.12.0",
+    "size": 9392,
+    "status": "started"
+  },
+  "382 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/got/11.8.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/spectron/15.0.0",
+      "name": "got",
+      "rawSpec": "^11.8.0"
+    }
+  },
+  "383 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/got/11.8.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "384 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@blueprintjs/icons/4.0.0-beta.4",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "@blueprintjs/icons",
+      "rawSpec": "^4.0.0-beta.4"
+    }
+  },
+  "385 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/ajv/6.12.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "386 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/dom4/2.1.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "dom4",
+      "rawSpec": "^2.1.5"
+    }
+  },
+  "387 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/dom4/2.1.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "388 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/classnames/2.3.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "classnames",
+      "rawSpec": "^2.2"
+    }
+  },
+  "389 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/dom4/2.1.6",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "dom4",
+      "rawSpec": "^2.1.5"
+    }
+  },
+  "390 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@babel/core/7.16.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "391 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/dev-null/0.1.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "392 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/text-table/0.2.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "393 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-chromedriver/13.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "394 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/strip-ansi/6.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "395 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/change-case/4.1.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "396 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/split/1.0.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "397 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/got/11.8.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "398 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/dom4/2.1.6",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "399 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/globals/13.12.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "400 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@popperjs/core/2.10.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "@popperjs/core",
+      "rawSpec": "^2.5.4"
+    }
+  },
+  "401 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@popperjs/core/2.10.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "402 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/webdriverio/6.12.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/spectron/15.0.0",
+      "name": "webdriverio",
+      "rawSpec": "^6.9.1"
+    }
+  },
+  "403 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/webdriverio/6.12.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "404 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/resize-observer-polyfill/1.5.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "resize-observer-polyfill",
+      "rawSpec": "^1.5.1"
+    }
+  },
+  "405 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/resize-observer-polyfill/1.5.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "406 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/resize-observer-polyfill/1.5.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "resize-observer-polyfill",
+      "rawSpec": "^1.5.1"
+    }
+  },
+  "407 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/tslib/1.13.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "tslib",
+      "rawSpec": "~1.13.0"
+    }
+  },
+  "408 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/graceful-fs/4.2.8",
+    "wanted": {
+      "dependentId": "registry.nlark.com/fs-extra/10.0.0",
+      "name": "graceful-fs",
+      "rawSpec": "^4.2.0"
+    }
+  },
+  "409 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/graceful-fs/4.2.8",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "410 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/debug/4.3.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+      "name": "debug",
+      "rawSpec": "^4.3.2"
+    }
+  },
+  "411 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/functional-red-black-tree/1.0.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+      "name": "functional-red-black-tree",
+      "rawSpec": "^1.0.1"
+    }
+  },
+  "412 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/ignore/5.1.9",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+      "name": "ignore",
+      "rawSpec": "^5.1.8"
+    }
+  },
+  "413 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/ignore/5.1.9",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "414 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/regexpp/3.2.0",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+      "name": "regexpp",
+      "rawSpec": "^3.2.0"
+    }
+  },
+  "415 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/semver/7.3.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.3.0",
+      "name": "semver",
+      "rawSpec": "^7.3.5"
+    }
+  },
+  "416 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-popper/2.2.5",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/popover2/1.0.0-beta.6",
+      "name": "react-popper",
+      "rawSpec": "^2.2.4"
+    }
+  },
+  "417 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-popper/2.2.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "418 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-popper/1.3.11",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "react-popper",
+      "rawSpec": "^1.3.7"
+    }
+  },
+  "419 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-popper/1.3.11",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "420 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/electron-releases/3.848.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "fetched"
+  },
+  "421 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/jsonfile/6.1.0",
+    "wanted": {
+      "dependentId": "registry.nlark.com/fs-extra/10.0.0",
+      "name": "jsonfile",
+      "rawSpec": "^6.0.1"
+    }
+  },
+  "422 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/jsonfile/6.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "423 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.nlark.com/universalify/2.0.0",
+    "wanted": {
+      "dependentId": "registry.nlark.com/fs-extra/10.0.0",
+      "name": "universalify",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "424 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/universalify/2.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "425 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@popperjs/core/2.10.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "426 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/popper.js/1.16.1",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "popper.js",
+      "rawSpec": "^1.16.1"
+    }
+  },
+  "427 debug pnpm:deprecation": {
+    "deprecated": "You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1",
+    "depth": 1,
+    "pkgId": "registry.npmmirror.com/popper.js/1.16.1",
+    "pkgName": "popper.js",
+    "pkgVersion": "1.16.1",
+    "prefix": "/Users/ss/projects/yunque/rime-settings"
+  },
+  "428 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/popper.js/1.16.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  },
+  "429 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/webdriverio/6.12.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "430 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/resize-observer-polyfill/1.5.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "431 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/graceful-fs/4.2.8",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "432 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-popper/2.2.5",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "433 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/react-popper/1.3.11",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "434 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/jsonfile/6.1.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "435 debug pnpm:progress": {
+    "packageId": "registry.nlark.com/universalify/2.0.0",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "436 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/popper.js/1.16.1",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "found_in_store"
+  },
+  "437 error pnpm": {
+    "code": "ERR_PNPM_NO_MATCHING_VERSION",
+    "packageMeta": {
+      "name": "@blueprintjs/colors",
+      "modified": "2021-09-30T15:54:22.000Z",
+      "dist-tags": {
+        "latest": "4.0.0-alpha.1",
+        "next": "4.0.0-beta.0"
+      },
+      "versions": {
+        "4.0.0-beta.0": {
+          "name": "@blueprintjs/colors",
+          "version": "4.0.0-beta.0",
+          "description": "Blueprint color definitions",
+          "main": "lib/index.js",
+          "scripts": {
+            "clean": "rm -rf lib/*",
+            "compile": "run-p \"compile:*\"",
+            "compile:esm": "tsc -p src/",
+            "compile:css": "sass-compile ./src",
+            "compile:css-colors": "generate-css-variables --outputFileName colors _colors.scss",
+            "dev": "run-p \"compile:esm -- --watch\" \"compile:css -- --watch\"",
+            "lint": "npm-run-all -p lint:scss lint:es",
+            "lint:scss": "sass-lint",
+            "lint:es": "es-lint",
+            "lint-fix": "es-lint --fix && sass-lint --fix",
+            "test": "mocha test/index.js",
+            "verify": "npm-run-all compile -p dist lint"
+          },
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^2.0.0-beta.0",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+ssh://git@github.com/palantir/blueprint.git",
+            "directory": "packages/colors"
+          },
+          "author": {
+            "name": "Palantir Technologies"
+          },
+          "license": "Apache-2.0",
+          "readmeFilename": "README.md",
+          "bugs": {
+            "url": "https://github.com/palantir/blueprint/issues"
+          },
+          "homepage": "https://github.com/palantir/blueprint#readme",
+          "_id": "@blueprintjs/colors@4.0.0-beta.0",
+          "_nodeVersion": "12.22.6",
+          "_npmVersion": "6.14.15",
+          "dist": {
+            "shasum": "324a6e0cb0fa4223aaaca1746e0ce3b02ed0cbb4",
+            "size": 9985,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-4.0.0-beta.0.tgz"
+          },
+          "_npmUser": {
+            "name": "blueprintjs",
+            "email": "pt-vendor-npm@palantir.com"
+          },
+          "directories": {},
+          "maintainers": [
+            {
+              "name": "blueprintjs",
+              "email": "ggray@palantir.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/colors_4.0.0-beta.0_1633017248340_0.035177817692389146"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1633017248533,
+          "_cnpm_publish_time": 1633017248533
+        },
+        "4.0.0-alpha.1": {
+          "name": "@blueprintjs/colors",
+          "version": "4.0.0-alpha.1",
+          "description": "Blueprint color definitions",
+          "main": "lib/index.js",
+          "scripts": {
+            "clean": "rm -rf lib/*",
+            "compile": "run-p \"compile:*\"",
+            "compile:esm": "tsc -p src/",
+            "compile:css": "sass-compile ./src",
+            "compile:css-colors": "generate-css-variables --outputFileName colors _colors.scss",
+            "dev": "run-p \"compile:esm -- --watch\" \"compile:css -- --watch\"",
+            "lint": "npm-run-all -p lint:scss lint:es",
+            "lint:scss": "sass-lint",
+            "lint:es": "es-lint",
+            "lint-fix": "es-lint --fix && sass-lint --fix",
+            "test": "mocha test/index.js",
+            "verify": "npm-run-all compile -p dist lint"
+          },
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^1.6.1",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+ssh://git@github.com/palantir/blueprint.git",
+            "directory": "packages/colors"
+          },
+          "author": {
+            "name": "Palantir Technologies"
+          },
+          "license": "Apache-2.0",
+          "bugs": {
+            "url": "https://github.com/palantir/blueprint/issues"
+          },
+          "homepage": "https://github.com/palantir/blueprint#readme",
+          "_id": "@blueprintjs/colors@4.0.0-alpha.1",
+          "_nodeVersion": "12.22.6",
+          "_npmVersion": "6.14.15",
+          "dist": {
+            "shasum": "370684b404e5400494169c54cc3a31385fc6db6a",
+            "size": 9668,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-4.0.0-alpha.1.tgz"
+          },
+          "_npmUser": {
+            "name": "blueprintjs",
+            "email": "pt-vendor-npm@palantir.com"
+          },
+          "directories": {},
+          "maintainers": [
+            {
+              "name": "blueprintjs",
+              "email": "ggray@palantir.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/colors_4.0.0-alpha.1_1632844325251_0.29998454341763403"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1632844325610,
+          "_cnpm_publish_time": 1632844325610
+        },
+        "4.0.0-alpha.0": {
+          "name": "@blueprintjs/colors",
+          "version": "4.0.0-alpha.0",
+          "description": "Blueprint color definitions",
+          "main": "lib/index.js",
+          "scripts": {
+            "clean": "rm -rf lib/*",
+            "compile": "run-p \"compile:*\"",
+            "compile:esm": "tsc -p src/",
+            "compile:css": "sass-compile ./src",
+            "compile:css-colors": "generate-css-variables --outputFileName colors _colors.scss",
+            "dev": "run-p \"compile:esm -- --watch\" \"compile:css -- --watch\"",
+            "lint": "npm-run-all -p lint:scss lint:es",
+            "lint:scss": "sass-lint",
+            "lint:es": "es-lint",
+            "lint-fix": "es-lint --fix && sass-lint --fix",
+            "test": "mocha test/index.js",
+            "verify": "npm-run-all compile -p dist lint"
+          },
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^1.6.1",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "repository": {
+            "type": "git",
+            "url": "git+ssh://git@github.com/palantir/blueprint.git",
+            "directory": "packages/colors"
+          },
+          "author": {
+            "name": "Palantir Technologies"
+          },
+          "license": "Apache-2.0",
+          "bugs": {
+            "url": "https://github.com/palantir/blueprint/issues"
+          },
+          "homepage": "https://github.com/palantir/blueprint#readme",
+          "_id": "@blueprintjs/colors@4.0.0-alpha.0",
+          "_nodeVersion": "12.22.6",
+          "_npmVersion": "6.14.15",
+          "dist": {
+            "shasum": "6abb3480233d370c78746a0ccd86415b0c2d45ea",
+            "size": 9623,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-4.0.0-alpha.0.tgz"
+          },
+          "_npmUser": {
+            "name": "blueprintjs",
+            "email": "pt-vendor-npm@palantir.com"
+          },
+          "directories": {},
+          "maintainers": [
+            {
+              "name": "blueprintjs",
+              "email": "ggray@palantir.com"
+            }
+          ],
+          "_npmOperationalInternal": {
+            "host": "s3://npm-registry-packages",
+            "tmp": "tmp/colors_4.0.0-alpha.0_1632762661041_0.8172139667642415"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1632762661155,
+          "_cnpm_publish_time": 1632762661155
+        },
+        "5.0.0-alpha.0": {
+          "name": "@blueprintjs/colors",
+          "version": "5.0.0-alpha.0",
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^1.6.0",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "directories": {},
+          "dist": {
+            "shasum": "406e67413a7f53a7587a1a621ae67b08ad701f0b",
+            "size": 8224,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-5.0.0-alpha.0.tgz"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1631817986627
+        },
+        "3.0.0": {
+          "name": "@blueprintjs/colors",
+          "version": "3.0.0",
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^1.5.1",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "directories": {},
+          "dist": {
+            "shasum": "f121dc1bc24cc367668a425911fa8ff52e87014a",
+            "size": 6492,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-3.0.0.tgz"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1630704986811
+        },
+        "1.0.1": {
+          "name": "@blueprintjs/colors",
+          "version": "1.0.1",
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^1.5.1",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "directories": {},
+          "dist": {
+            "shasum": "d351cadffd33c2dba766e555868245aa8cc3ef23",
+            "size": 7397,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-1.0.1.tgz"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1630365004381
+        },
+        "1.0.0": {
+          "name": "@blueprintjs/colors",
+          "version": "1.0.0",
+          "devDependencies": {
+            "@blueprintjs/node-build-scripts": "^1.5.1",
+            "mocha": "^8.2.1",
+            "typescript": "^4.1.2"
+          },
+          "directories": {},
+          "dist": {
+            "shasum": "3b3501eae2294098fe5bdf8f37d0c471e95cd0e6",
+            "size": 3752,
+            "noattachment": false,
+            "tarball": "https://registry.npmmirror.com/@blueprintjs/colors/download/@blueprintjs/colors-1.0.0.tgz"
+          },
+          "_hasShrinkwrap": false,
+          "publish_time": 1629419687331
+        }
+      },
+      "cachedAt": 1635998655593
+    },
+    "pkgsStack": [
+      {
+        "id": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+        "name": "@blueprintjs/core",
+        "version": "4.0.0-beta.6"
+      }
+    ],
+    "err": {
+      "name": "pnpm",
+      "message": "No matching version found for @blueprintjs/colors@^4.0.0-beta.1",
+      "code": "ERR_PNPM_NO_MATCHING_VERSION",
+      "stack": "pnpm: No matching version found for @blueprintjs/colors@^4.0.0-beta.1\n    at resolveNpm (/Users/ss/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.19.1/node_modules/pnpm/dist/pnpm.cjs:85063:15)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async Object.resolve (/Users/ss/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.19.1/node_modules/pnpm/dist/pnpm.cjs:85226:34)\n    at async run (/Users/ss/pnpm-global/5/node_modules/.pnpm/registry.npmmirror.com+pnpm@6.19.1/node_modules/pnpm/dist/pnpm.cjs:71030:23)"
+    }
+  },
+  "438 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/dom4/2.0.2",
+    "wanted": {
+      "dependentId": "registry.npmmirror.com/@blueprintjs/core/4.0.0-beta.6",
+      "name": "@types/dom4",
+      "rawSpec": "^2.0.1"
+    }
+  },
+  "439 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/dom4/2.0.2",
+    "requester": "/Users/ss/projects/yunque/rime-settings",
+    "status": "resolved"
+  }
+}

@@ -27,11 +27,16 @@ let mainWindow: BrowserWindow | null = null
 async function createWindow() {
   mainWindow = new BrowserWindow({
     show: false,
+    width: 800,
+    height: 600,
+    resizable: false,
     webPreferences: {
       preload: join(__dirname, "../preload/index.cjs.js"),
       contextIsolation: env.MODE !== "test",
     },
   })
+
+  remoteMain.enable(mainWindow.webContents)
 
   const indexHTML = join(__dirname, "../renderer/index.html")
   const url =
@@ -40,11 +45,9 @@ async function createWindow() {
       : format(new URL(`file:///${indexHTML}`))
 
   await mainWindow.loadURL(url)
-  mainWindow.maximize()
   mainWindow.show()
-  remoteMain.enable(mainWindow.webContents)
 
-  if (env.DEV) mainWindow.webContents.openDevTools()
+  // if (env.DEV) mainWindow.webContents.openDevTools()
 }
 
 app.on("second-instance", () => {

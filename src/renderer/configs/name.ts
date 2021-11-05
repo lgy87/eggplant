@@ -1,1 +1,1 @@
-export default "eggplant"
+export default "rime-settings"

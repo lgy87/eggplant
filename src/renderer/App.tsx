@@ -4,9 +4,8 @@ import Suspense from "~/components/Suspense"
 import Home from "~/pages/Home"
 import "./App.css"
 
-const Tags = lazy(() => import("~/pages/Tags"))
-const Notes = lazy(() => import("~/pages/Notes"))
-const Settings = lazy(() => import("~/pages/Settings"))
+const Theme = lazy(() => import("~/pages/Theme"))
+const Shortcuts = lazy(() => import("~/pages/Shortcuts"))
 
 function App() {
   return (
@@ -14,9 +13,8 @@ function App() {
       <Suspense>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/tags/*" element={<Tags />} />
-          <Route path="/notes/*" element={<Notes />} />
-          <Route path="/settings/*" element={<Settings />} />
+          <Route path="/theme" element={<Theme />} />
+          <Route path="/shortcuts" element={<Shortcuts />} />
         </Routes>
       </Suspense>
     </HashRouter>

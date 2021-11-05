@@ -11,7 +11,7 @@ function Entry() {
   const hotkeys = useMemo(
     () => [
       {
-        combo: "cmd+r",
+        combo: "cmd + r",
         global: true,
         label: "Reload",
         onKeyDown: () => location.reload(),
@@ -22,7 +22,7 @@ function Entry() {
   const { handleKeyUp } = useHotkeys(hotkeys)
 
   return (
-    <div onKeyUp={handleKeyUp}>
+    <div className="entry" onKeyUp={handleKeyUp}>
       <App />
     </div>
   )

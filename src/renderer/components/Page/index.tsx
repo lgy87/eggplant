@@ -16,15 +16,24 @@ type Props = {
 
 const Page: FC<Props> = ({ goBack, children, className, style }) => {
   const navigate = useNavigate()
+  const hasNotGoBack = r.isFalse(goBack)
+
   const back = useCallback(() => navigate(-1), [navigate])
   const pageClassNames = useMemo(
-    () => cx("h-screen", "relative", styles.page, className),
-    [className],
+    () =>
+      cx(
+        "h-screen",
+        "relative",
+        styles.page,
+        hasNotGoBack || styles.goBackBar,
+        className,
+      ),
+    [className, hasNotGoBack],
   )
 
   return (
     <div className={pageClassNames} style={style}>
-      {r.isFalse(goBack) || (
+      {hasNotGoBack || (
         <A className={goBackClassNames} onClick={goBack || back}>
           Go Back
         </A>

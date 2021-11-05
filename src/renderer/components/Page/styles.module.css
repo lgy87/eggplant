@@ -12,11 +12,15 @@
   opacity: 0.04;
   background: transparent url("~/assets/images/logo.png") center center
     no-repeat;
-  background-size: 40%;
+  background-size: 60%;
   z-index: -1;
 }
 
 .goBack {
   top: var(--gap);
   left: var(--gap);
+}
+
+.goBackBar {
+  padding-top: 36px;
 }

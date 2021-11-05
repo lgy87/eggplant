@@ -1,8 +1,11 @@
 import { contextBridge } from "electron"
 import * as fse from "fs-extra"
+import * as basic from "./features/basic"
 import db from "./features/db"
 import * as dialogs from "./features/dialogs"
 import * as file from "./features/file"
+import * as theme from "./features/theme"
+import * as window from "./features/window"
 
 const apiKey = "electron"
 
@@ -15,6 +18,9 @@ const api = {
   file,
   dialogs,
   db,
+  window,
+  basic,
+  theme,
 } as const
 
 export type ExposedInMainWorld = Readonly<typeof api>
@@ -28,8 +34,6 @@ if (import.meta.env.MODE !== "test") {
    */
   contextBridge.exposeInMainWorld(apiKey, api)
 } else {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-var-requires
-  ;(window as any).electronRequire = require
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ;(window as any)[apiKey] = api
 }

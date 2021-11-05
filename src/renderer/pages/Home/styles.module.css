@@ -1,3 +1,7 @@
-.search {
-  width: 400px;
+.btn {
+  margin-bottom: var(--gap);
+}
+
+.btn:last-of-type {
+  margin-bottom: 0;
 }
