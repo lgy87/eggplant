@@ -1,20 +1,32 @@
+import cx from "classnames"
 import React, { FC, memo } from "react"
-import { useNavigate } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import { useTitle } from "react-use"
 import Page from "~/components/Page"
-import Tabs from "~/components/Tabs"
 import { EmptyObject } from "~/global"
 import useWindowSize from "~/hooks/useWindowSize"
+import About from "../About"
+import General from "../General"
+import Theme from "../Theme"
+import Navigation from "./Navigation"
+import styles from "./styles.module.css"
+
+const klass = cx("overflow-y-scroll", styles.content)
 
 const Home: FC<EmptyObject> = () => {
-  const navigate = useNavigate()
-
-  useWindowSize(240, 200)
+  useWindowSize(540, 300)
   useTitle("Home")
 
   return (
     <Page goBack={false}>
-      <Tabs></Tabs>
+      <Navigation />
+      <div className={klass}>
+        <Routes>
+          <Route path="theme" element={<Theme />} />
+          <Route path="general" element={<General />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </div>
     </Page>
   )
 }

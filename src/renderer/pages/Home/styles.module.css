@@ -1,7 +1,32 @@
-.btn {
-  margin-bottom: var(--gap);
+.navigation {
+  padding: 2px;
+  color: #666;
+}
+.content {
+  padding: calc(var(--gap) * 2);
+  height: calc(100vh - 48px);
 }
 
-.btn:last-of-type {
-  margin-bottom: 0;
+.tab {
+  height: 43px;
+  margin-right: 2px !important;
+  padding: var(--gap);
+  font-size: 0.8em;
+}
+
+.tab:last-of-type {
+  margin-right: 0;
+}
+
+.tab:hover {
+  background-color: #ebebe9;
+}
+
+.active {
+  color: #0170f5;
+  background-color: #ebebe9;
+}
+
+.active:hover {
+  color: #043faf;
 }

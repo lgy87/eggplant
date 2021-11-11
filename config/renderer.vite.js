@@ -1,5 +1,6 @@
 const { join } = require("path")
 import reactRefresh from "@vitejs/plugin-react-refresh"
+import tailwindcss from "tailwindcss"
 const { chrome } = require("./electron-dep-versions")
 /**
  * @type {import("vite").UserConfig}
@@ -24,5 +25,10 @@ module.exports = {
       external: require("./external-packages").default,
     },
     emptyOutDir: true,
+  },
+  css: {
+    postcss: {
+      plugins: [tailwindcss],
+    },
   },
 }

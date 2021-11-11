@@ -1,0 +1,44 @@
+.summary {
+  margin-bottom: calc(var(--gap2) * 2) !important;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.subTitle {
+  font-size: 14px;
+  margin-bottom: var(--gap2);
+  color: #555;
+}
+
+.sub {
+  padding-left: var(--gap);
+  color: #666;
+}
+
+.about table {
+  width: 100%;
+  margin-bottom: var(--gap);
+}
+
+.about table:last-of-type {
+  margin-bottom: 0;
+}
+
+.thead {
+  width: 60px;
+  padding-right: var(--gap);
+  text-align: right;
+  color: #666;
+}
+
+.button {
+  margin-left: var(--gap);
+}
+
+.link {
+  color: #0170f5;
+  text-decoration: underline;
+}

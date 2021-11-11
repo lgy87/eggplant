@@ -1,7 +1,14 @@
-import { MenuItemProps as BPMenuItemProps } from "@blueprintjs/core"
-
-export type MenuItemProps = BPMenuItemProps & { key: string }
-export const menuItems = [
-  { icon: "manually-entered-data", text: "Note", key: "notes" },
-  { icon: "tag", text: "Tag", key: "tags" },
-] as Array<MenuItemProps>
+export const tabs = [
+  {
+    icon: "key-command",
+    text: "general",
+  },
+  {
+    icon: "eye-open",
+    text: "theme",
+  },
+  {
+    icon: "chat",
+    text: "about",
+  },
+] as const

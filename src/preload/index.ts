@@ -1,11 +1,5 @@
 import { contextBridge } from "electron"
-import * as fse from "fs-extra"
-import * as basic from "./features/basic"
-import db from "./features/db"
-import * as dialogs from "./features/dialogs"
-import * as file from "./features/file"
-import * as theme from "./features/theme"
-import * as window from "./features/window"
+import features from "./features"
 
 const apiKey = "electron"
 
@@ -14,13 +8,7 @@ const apiKey = "electron"
  */
 const api = {
   versions: process.versions,
-  fse,
-  file,
-  dialogs,
-  db,
-  window,
-  basic,
-  theme,
+  ...features,
 } as const
 
 export type ExposedInMainWorld = Readonly<typeof api>

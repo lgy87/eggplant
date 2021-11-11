@@ -9,10 +9,6 @@
   bottom: 0;
   right: 0;
   content: "";
-  opacity: 0.04;
-  background: transparent url("~/assets/images/logo.png") center center
-    no-repeat;
-  background-size: 60%;
   z-index: -1;
 }
 
